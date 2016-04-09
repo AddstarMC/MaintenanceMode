@@ -24,8 +24,6 @@ public class MMCommandExecutor implements CommandExecutor {
             sender.sendMessage(ChatColor.WHITE + " - " + ChatColor.GREEN + "maintenancemode.admin");
             return true;
         }
-
-        if (true) {
             if (args.length == 1 && args[0].equalsIgnoreCase("version")) {
                 sender.sendMessage(ChatColor.GREEN + "The MaintenanceMode plugin is version " + pdFile.getVersion());
                 return true;
@@ -131,7 +129,7 @@ public class MMCommandExecutor implements CommandExecutor {
             } else {
                 sender.sendMessage(ChatColor.RED + "[MaintenanceMode] " + ChatColor.WHITE + "Usage: " + ChatColor.GREEN + "/mm help" + ChatColor.WHITE + " for more information.");
             }
-        }
+
         return true;
     }
 }
