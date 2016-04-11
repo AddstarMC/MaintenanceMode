@@ -60,7 +60,7 @@
                 <filtering>true</filtering>
                 <directory>${basedir}/.</directory>
                 <includes>
-                    <include>plugin.yml</include>
+                    <include>*.yml</include>
                 </includes>
             </resource>
         </resources>
