@@ -1,15 +1,17 @@
-package net.dkebnh.bukkit.MaintenanceMode;
+package net.dkebnh.bukkit.MaintenanceMode.Utilities;
 
 import java.util.logging.Logger;
 
+import net.dkebnh.bukkit.MaintenanceMode.MaintenanceMode;
+
 import org.bukkit.plugin.PluginDescriptionFile;
 
-public class MMLogger {
+public class MsgLogger {
 
     private MaintenanceMode plugin;
     private Logger log;
 
-    public MMLogger(MaintenanceMode plugin) {
+    public MsgLogger(MaintenanceMode plugin) {
         this.plugin = plugin;
         this.log = Logger.getLogger("Minecraft");
     }
@@ -17,6 +19,10 @@ public class MMLogger {
     private String FormatMessage(String message) {
         PluginDescriptionFile pdFile = plugin.getDescription();
         return "[" + pdFile.getName() + "] " + message;
+    }
+
+    private String UpdaterFormatMessage(String message) {
+        return "[DKE UpdateChecker] " + message;
     }
 
     public void infoMSG(String message) {
@@ -31,4 +37,8 @@ public class MMLogger {
         this.log.severe(this.FormatMessage(message));
     }
 
+    public void infoMSGUpdater(String message) {
+        this.log.info(this.UpdaterFormatMessage(message));
+    }
 }
+
