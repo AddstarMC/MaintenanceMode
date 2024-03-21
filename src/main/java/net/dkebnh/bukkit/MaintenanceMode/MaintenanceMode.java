@@ -13,7 +13,8 @@ import net.dkebnh.bukkit.MaintenanceMode.Listeners.PingListener;
 import net.dkebnh.bukkit.MaintenanceMode.Listeners.PlayerJoinListener;
 import net.dkebnh.bukkit.MaintenanceMode.Listeners.PlayerLoginListener;
 import net.dkebnh.bukkit.MaintenanceMode.QueryServer.QueryServer;
-
+import net.dkebnh.bukkit.MaintenanceMode.placeholder.PlaceholderManager;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class MaintenanceMode extends JavaPlugin {
@@ -26,6 +27,16 @@ public class MaintenanceMode extends JavaPlugin {
     private QueryServer server;
 
     public void onEnable() {
+
+        if(Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
+            getLogger().info("PlaceholderAPI found! Registering placeholders...");
+            new PlaceholderManager(this).register();
+            getLogger().info("Placeholders loaded!");
+        }
+        else{
+            getLogger().warning("PlaceholderAPI not found, skipping...");
+        }
+
         conf = new Configuration(this);
         this.log = new MsgLogger(this);
 
