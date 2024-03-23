@@ -40,7 +40,7 @@ public final class RequestHandler extends Thread {
 
             StringBuilder resp = new StringBuilder();
             resp.append("{");
-            resp.append("\"server\":").append("\"" + Bukkit.getServerName() + "\"").append(",");
+            resp.append("\"server\":").append("\"" + Bukkit.getServer().getName() + "\"").append(",");
             resp.append("\"serverPort\":").append(m.getServer().getPort()).append(",");
             resp.append("\"motd\":").append("\"" + m.getMOTD() + "\"").append(",");
             resp.append("\"mmenabled\":").append("\"" + m.getEnabled() + "\"").append(",");

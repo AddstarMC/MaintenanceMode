@@ -3,6 +3,7 @@ version: ${pom.version}
 description: MaintenanceMode bukkit plugin.
 main: net.dkebnh.bukkit.MaintenanceMode.MaintenanceMode
 load: STARTUP
+softdepend: [PlaceholderAPI]
 commands:
     mm:
         description: MaintenanceModes standard command variable.
